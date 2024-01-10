@@ -21,7 +21,7 @@ scrape_configs:
   - job_name: 'Railway Forum'
     metrics_path: "/api/metrics"
     static_configs:
-      - targets: ['community.railway.app:80']']
+      - targets: ['community.railway.app:80']
 
   # - job_name: 'postgres'
   #   scrape_interval: 5s
