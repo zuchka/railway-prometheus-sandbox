@@ -1,8 +1,7 @@
 FROM prom/prometheus
 
 # Create the Prometheus data directory and set correct permissions
-RUN mkdir -p /prometheus && \
-    chown -R 1000:1000 /prometheus
+RUN chmod -R 777 /prometheus
 # copy the Prometheus configuration file
 COPY prometheus.yml /etc/prometheus/prometheus.yml
 # expose the Prometheus server port
