@@ -1,8 +1,8 @@
 FROM prom/prometheus
 
+RUN chown -R 1000:1000 /prometheus
 # copy the Prometheus configuration file
 COPY prometheus.yml /etc/prometheus/prometheus.yml
-RUN chown 65534:65534 /prometheus
 # expose the Prometheus server port
 EXPOSE 9090
 # set the entrypoint command
