@@ -2,7 +2,7 @@ FROM prom/prometheus
 
 # copy the Prometheus configuration file
 COPY prometheus.yml /etc/prometheus/prometheus.yml
-
+RUN chown 65534:65534 /prometheus
 # expose the Prometheus server port
 EXPOSE 9090
 # set the entrypoint command
@@ -15,4 +15,3 @@ CMD        [ "--config.file=/etc/prometheus/prometheus.yml", \
              "--web.external-url=http://localhost:9090", \
              "--log.level=info"]
 
-RUN chown -R 1000:2000 /prometheus
